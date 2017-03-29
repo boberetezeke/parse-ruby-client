@@ -2,6 +2,7 @@
 require 'parse/protocol'
 require 'parse/error'
 require 'parse/util'
+require 'parse/schema'
 
 require 'logger'
 
@@ -158,6 +159,10 @@ module Parse
 
     def user(data)
       Parse::User.new(data, self)
+    end
+    
+    def schema(data=nil)
+      Parse::Schema.new(data, self)
     end
   end
 
