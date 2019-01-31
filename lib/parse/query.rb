@@ -50,8 +50,9 @@ module Parse
       self
     end
 
-    def regex(field, expression)
+    def regex(field, expression, options: nil)
       add_constraint field, '$regex' => expression
+      add_constraint field, '$options' => options if options
       self
     end
 
